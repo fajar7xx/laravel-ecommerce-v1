@@ -59,7 +59,7 @@
                                     </div>
                                 </div>
                                 <div class="sign-btn text-center">
-                                    <button type="submit" class="btn btn-theme">Sign In</button>
+                                    <button type="submit" class="btn btn-theme btn-block">Sign In</button>
                                 </div>
                             </form>
                             <div class="register">
