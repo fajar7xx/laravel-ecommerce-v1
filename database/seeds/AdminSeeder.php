@@ -1,6 +1,8 @@
 <?php
 
+use App\Admin;
 use Illuminate\Database\Seeder;
+use Faker\Factory as Faker;
 
 class AdminSeeder extends Seeder
 {
@@ -11,6 +13,14 @@ class AdminSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $faker = Faker::create();
+
+        Admin::create([
+            'name' => 'Fajar Siagian',
+            'email' => 'fajar7xx@gmail.com',
+            'password' => bcrypt('azhari30'),
+            'created_at' => $faker->dateTimeThisMonth($max = 'now', $timezone = null),
+            'updated_at' => $faker->dateTimeThisMonth($max = 'now', $timezone = null),
+        ]);
     }
 }

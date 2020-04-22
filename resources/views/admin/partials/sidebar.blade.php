@@ -14,8 +14,8 @@
         <div class="nav-container">
             <nav id="main-menu-navigation" class="navigation-main">
                 <div class="nav-lavel">Navigation</div>
-                <div class="nav-item active">
-                    <a href="#"><i class="ik ik-bar-chart-2"></i><span>Dashboard</span></a>
+                <div class="nav-item {{ Route::currentRouteName() == 'admin.dashboard' ? 'active' : '' }}">
+                    <a href="{{ route('admin.dashboard') }}"><i class="ik ik-bar-chart-2"></i><span>Dashboard</span></a>
                 </div>
                 <div class="nav-item has-sub">
                     <a href="javascript:void(0)"><i class="ik ik-users"></i><span>Users</span></a>
@@ -25,8 +25,19 @@
                         <a href="#" class="menu-item">Permissions</a>
                     </div>
                 </div>
-                <div class="nav-item">
-                    <a href="#"><i class="ik ik-settings"></i><span>Settings</span></a>
+                <div class="nav-item {{ Route::currentRouteName() == 'admin.settings' ? 'active' : '' }}">
+                    <a href="{{ route('admin.settings') }}"><i class="ik ik-settings"></i><span>Settings</span></a>
+                </div>
+                <div class="nav-item has-sub">
+                    <a href="javascript:void(0)"><i class="ik ik-settings"></i><span>Settings</span></a>
+                    <div class="submenu-content">
+                        <a href="#" class="menu-item">General</a>
+                        <a href="#" class="menu-item">Site Logo</a>
+                        <a href="#" class="menu-item">Footer & Seo</a>
+                        <a href="#" class="menu-item">Social Links</a>
+                        <a href="#" class="menu-item">Analitycs</a>
+                        <a href="#" class="menu-item">Payments</a>
+                    </div>
                 </div>
             </nav>
         </div>

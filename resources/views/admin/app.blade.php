@@ -293,5 +293,6 @@
         <script src="{{ asset ('backend') }}/js/charts.js"></script>
         <script src="{{ asset ('backend') }}/dist/js/theme.min.js"></script>
         @yield('js')
+        @stack('scripts')
     </body>
 </html>
