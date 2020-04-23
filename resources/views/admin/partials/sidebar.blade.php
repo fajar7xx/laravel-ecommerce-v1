@@ -25,19 +25,11 @@
                         <a href="#" class="menu-item">Permissions</a>
                     </div>
                 </div>
+                <div class="nav-item {{ Route::currentRouteName() == 'admin.categories.index' ? 'active' : '' }}">
+                    <a href="{{ route('admin.categories.index') }}"><i class="ik ik-tag"></i><span>Category</span></a>
+                </div>
                 <div class="nav-item {{ Route::currentRouteName() == 'admin.settings' ? 'active' : '' }}">
                     <a href="{{ route('admin.settings') }}"><i class="ik ik-settings"></i><span>Settings</span></a>
-                </div>
-                <div class="nav-item has-sub">
-                    <a href="javascript:void(0)"><i class="ik ik-settings"></i><span>Settings</span></a>
-                    <div class="submenu-content">
-                        <a href="#" class="menu-item">General</a>
-                        <a href="#" class="menu-item">Site Logo</a>
-                        <a href="#" class="menu-item">Footer & Seo</a>
-                        <a href="#" class="menu-item">Social Links</a>
-                        <a href="#" class="menu-item">Analitycs</a>
-                        <a href="#" class="menu-item">Payments</a>
-                    </div>
                 </div>
             </nav>
         </div>

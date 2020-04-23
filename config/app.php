@@ -178,6 +178,7 @@ return [
 
         // service create by me
         App\Providers\SettingServiceProvider::class,
+        App\Providers\RepositoryServiceProvider::class,
 
     ],
 

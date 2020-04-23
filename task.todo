@@ -5,8 +5,11 @@ link tutorial:
     ✔ https://www.larashout.com/backend-admin-authentication @done (4/11/2020, 10:40:27 PM)
     ✔ https://www.larashout.com/backend-admin-authentication @done (4/11/2020, 11:45:19 PM)
     ✔ https://www.larashout.com/base-controller-and-repository @done (4/12/2020, 8:10:38 PM)
-    ✔ https://www.larashout.com/settings-section-part-1 @done (4/12/2020, 8:58:39 PM)
-    ☐ https://www.larashout.com/settings-section-part-2
+    ✔ https://www.larashout.com/settings-section-part-1 @done (4/22/2020, 4:37:43 PM)
+    ✘ https://www.larashout.com/settings-section-part-2 @cancelled (4/22/2020, 4:37:44 PM) @bug
+    ✔ https://www.larashout.com/categories-section-part-1 @done (4/22/2020, 5:10:24 PM)
+    ☐ https://www.larashout.com/laravel-e-commerce-application-development-categories-section-part-2
+    
 
 
 bug:
@@ -14,3 +17,4 @@ bug:
 
 
     https://scotch.io/tutorials/how-to-use-laravel-config-files#toc-when-to-use-config-file
+    http://themekit.lavalite.org/

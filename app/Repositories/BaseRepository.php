@@ -73,7 +73,7 @@ class BaseRepository implements BaseContract
      */
     public function findOneOrFail(int $id)
     {
-        return $this->model->findOneOrFail($id);
+        return $this->model->findOrFail($id);
     }
 
     /**
