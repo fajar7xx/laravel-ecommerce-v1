@@ -40,8 +40,9 @@
                 </div>
                 <div class="card-body">
                     <form action="{{ route('admin.categories.update', $targetCategory->id) }}" method="POST" role="form" enctype="multipart/form-data">
-                        <input type="hidden" name="id" value="{{ $targetCategory->id }}">
+                        @method('patch')
                         @csrf
+                        <input type="hidden" name="id" value="{{ $targetCategory->id }}">
                         <div class="form-group">
                             <label for="name">Name <span class="ml-5 text-danger">*</span></label>
                             <input type="text" name="name" id="name" class="form-control @error('name') is-invalid @enderror" value="{{ old('name', $targetCategory->name) }}">

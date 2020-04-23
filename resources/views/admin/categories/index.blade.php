@@ -85,16 +85,21 @@
                                             {{ $category->order }}
                                         </td>
                                         <td class="text-center">
-                                            <div class="btn-group" role="group" aria-label="Actions">
-                                                <a href="{{ route('admin.categories.edit', $category->id) }}" class="btn btn-sm btn-info">
-                                                    <i class="ik ik-edit"></i>
-                                                    edit
-                                                </a>
-                                                <a href="{{ route('admin.categories.destroy', $category->id) }}" class="btn btn-sm btn-danger" onclick="return confirm(' Are you sure delete this')">
+                                            <form action="{{ route('admin.categories.destroy', $category->id) }}" class="d-inline" method="POST" onsubmit="return confirm('Are you sure?')">
+                                                <div class="btn-group" role="group" aria-label="Actions">
+                                                    <a href="{{ route('admin.categories.edit', $category->id) }}" class="btn btn-sm btn-info">
+                                                        <i class="ik ik-edit"></i>
+                                                        edit
+                                                    </a>
+                                                {{-- <a href="{{ route('admin.categories.destroy', $category->id) }}" class="btn btn-sm btn-danger" onclick="return confirm(' Are you sure delete this')">
                                                     <i class="ik ik-trash"></i>
                                                     delete
-                                                </a>
-                                            </div>
+                                                </a> --}}
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-sm btn-danger"><i class="ik ik-trash"></i> Delete</button>
+                                                </div>
+                                            </form>
                                         </td>
                                     </tr>
                                 @endif

@@ -105,7 +105,21 @@ class CategoryController extends BaseController
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name' => 'required|max:255',
+            'parent' => 'required|not_in:0',
+            'image' => 'mimes:png,jpg,jpeg|max:1000'
+        ]);
+
+        $params = $request->except('_token');
+
+        $category = $this->categoryRepository->updateCategory($params);
+
+        if(!$category){
+            return $this->responseRedirectBack('Error occured while creating category.', 'error', true, true);
+        }
+
+        return $this->responRedirect('admin.categories.index', 'category added successfully', 'success', false, false);
     }
 
     /**
@@ -116,6 +130,12 @@ class CategoryController extends BaseController
      */
     public function destroy($id)
     {
-        //
+        $category = $this->categoryRepository->deleteCategory($id);
+
+        if(!$category){
+            return $this->responseRedirectBack('error Occured while deleting category.', 'error', true, true);
+        }
+
+        return $this->responRedirect('admin.categories.index', 'category deleted successfully', 'success', false, false);
     }
 }
