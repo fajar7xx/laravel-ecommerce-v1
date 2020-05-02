@@ -31,6 +31,9 @@
                 <div class="nav-item {{ Route::currentRouteName() == 'admin.attributes.index' ? 'active' : '' }}">
                     <a href="{{ route('admin.attributes.index') }}"><i class="ik ik-bookmark"></i><span>Attributes</span></a>
                 </div>
+                <div class="nav-item {{ Route::currentRouteName() == 'admin.attributes.index' ? 'active' : '' }}">
+                    <a href="{{ route('admin.brands.index') }}"><i class="ik ik-box"></i><span>Brands</span></a>
+                </div>
                 <div class="nav-item {{ Route::currentRouteName() == 'admin.settings' ? 'active' : '' }}">
                     <a href="{{ route('admin.settings') }}"><i class="ik ik-settings"></i><span>Settings</span></a>
                 </div>

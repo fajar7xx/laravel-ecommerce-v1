@@ -51,6 +51,10 @@ Route::group(['prefix'  =>  'admin'], function () {
         Route::post('update-values', 'Admin\AttributeValueController@updateValues');
         Route::post('delete-values', 'Admin\AttributeValueController@deleteValues');
 
+        Route::resource('brands', 'Admin\BrandController', [
+            'as' => 'admin'
+        ]);
+
     });
 
 
