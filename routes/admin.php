@@ -36,6 +36,21 @@ Route::group(['prefix'  =>  'admin'], function () {
         Route::resource('categories', 'Admin\CategoryController', [
             'as' => 'admin',
         ]);
+
+        // attribute values
+        // Route::group(['prefix' => 'attributes'], function(){
+        // });
+
+        // attributes
+        Route::resource('attributes', 'Admin\AttributeController', [
+            'as' => 'admin'
+        ]);
+
+        Route::post('get-values', 'Admin\AttributeValueController@getValues');
+        Route::post('add-values', 'Admin\AttributeValueController@addValues');
+        Route::post('update-values', 'Admin\AttributeValueController@updateValues');
+        Route::post('delete-values', 'Admin\AttributeValueController@deleteValues');
+
     });
 
 

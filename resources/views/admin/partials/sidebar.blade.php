@@ -26,7 +26,10 @@
                     </div>
                 </div>
                 <div class="nav-item {{ Route::currentRouteName() == 'admin.categories.index' ? 'active' : '' }}">
-                    <a href="{{ route('admin.categories.index') }}"><i class="ik ik-tag"></i><span>Category</span></a>
+                    <a href="{{ route('admin.categories.index') }}"><i class="ik ik-tag"></i><span>Categories</span></a>
+                </div>
+                <div class="nav-item {{ Route::currentRouteName() == 'admin.attributes.index' ? 'active' : '' }}">
+                    <a href="{{ route('admin.attributes.index') }}"><i class="ik ik-bookmark"></i><span>Attributes</span></a>
                 </div>
                 <div class="nav-item {{ Route::currentRouteName() == 'admin.settings' ? 'active' : '' }}">
                     <a href="{{ route('admin.settings') }}"><i class="ik ik-settings"></i><span>Settings</span></a>

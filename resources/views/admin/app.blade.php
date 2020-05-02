@@ -7,6 +7,8 @@
         <meta name="description" content="">
         <meta name="keywords" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         
         <link rel="icon" href="{{ asset('images/backend') }}/favicon.ico" type="image/x-icon" />
 
@@ -40,7 +42,7 @@
             <div class="page-wrap">
                 @include('admin.partials.sidebar')
 
-                <div class="main-content">
+                <div class="main-content" id="app">
                     @yield('content')
                 </div>
 

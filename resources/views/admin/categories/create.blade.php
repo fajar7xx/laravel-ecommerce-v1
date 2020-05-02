@@ -76,20 +76,6 @@
                             @enderror
                         </div>
 
-                        {{-- <div class="form-group">
-                            <div class="form-check">
-                                <input type="checkbox" name="featured" id="featured" class="form-check-input">
-                                <label for="featured">Fetured Category</label>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="form-check">
-                                <input type="checkbox" name="menu" id="menu" class="form-check-input">
-                                <label for="menu">Show in Menu</label>
-                            </div>
-                        </div> --}}
-
                         <div class="form-group">
                             <label class="custom-control custom-checkbox">
                                 <input type="checkbox" class="custom-control-input" id="featured" name="featured">
@@ -125,4 +111,5 @@
             </div>
         </div>
     </div>
-    @endsection
+</div>
+@endsection
