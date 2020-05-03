@@ -55,6 +55,10 @@ Route::group(['prefix'  =>  'admin'], function () {
             'as' => 'admin'
         ]);
 
+        Route::resource('products', 'Admin\ProductController', [
+            'as' => 'admin'
+        ]);
+
     });
 
 

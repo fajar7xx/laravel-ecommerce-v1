@@ -17,14 +17,9 @@
                 <div class="nav-item {{ Route::currentRouteName() == 'admin.dashboard' ? 'active' : '' }}">
                     <a href="{{ route('admin.dashboard') }}"><i class="ik ik-bar-chart-2"></i><span>Dashboard</span></a>
                 </div>
-                <div class="nav-item has-sub">
-                    <a href="javascript:void(0)"><i class="ik ik-users"></i><span>Users</span></a>
-                    <div class="submenu-content">
-                        <a href="#" class="menu-item">Admin Users</a>
-                        <a href="#" class="menu-item">Roles</a>
-                        <a href="#" class="menu-item">Permissions</a>
-                    </div>
-                </div>
+                <div class="nav-item {{ Route::currentRouteName() == 'admin.products.index' ? 'active' : '' }}">
+                  <a href="{{ route('admin.products.index') }}"><i class="ik ik-folder"></i><span>Products</span></a>
+              </div>
                 <div class="nav-item {{ Route::currentRouteName() == 'admin.categories.index' ? 'active' : '' }}">
                     <a href="{{ route('admin.categories.index') }}"><i class="ik ik-tag"></i><span>Categories</span></a>
                 </div>
@@ -33,6 +28,14 @@
                 </div>
                 <div class="nav-item {{ Route::currentRouteName() == 'admin.attributes.index' ? 'active' : '' }}">
                     <a href="{{ route('admin.brands.index') }}"><i class="ik ik-box"></i><span>Brands</span></a>
+                </div>
+                <div class="nav-item has-sub">
+                    <a href="javascript:void(0)"><i class="ik ik-users"></i><span>Users</span></a>
+                    <div class="submenu-content">
+                        <a href="#" class="menu-item">Admin Users</a>
+                        <a href="#" class="menu-item">Roles</a>
+                        <a href="#" class="menu-item">Permissions</a>
+                    </div>
                 </div>
                 <div class="nav-item {{ Route::currentRouteName() == 'admin.settings' ? 'active' : '' }}">
                     <a href="{{ route('admin.settings') }}"><i class="ik ik-settings"></i><span>Settings</span></a>
