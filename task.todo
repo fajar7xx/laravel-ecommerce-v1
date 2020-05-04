@@ -14,13 +14,14 @@ link tutorial:
     ✔ https://www.larashout.com/attributes-section-part-3 @done (5/2/2020, 12:34:09 PM)
     ✔ https://www.larashout.com/brands-section @done (5/2/2020, 7:59:37 PM)
     ✔ https://www.larashout.com/products-section-part-1 @done (5/3/2020, 9:41:57 PM)
-    ☐ https://www.larashout.com/products-section-part-2
+    ✔ https://www.larashout.com/products-section-part-2 @done (5/4/2020, 11:04:07 PM)
     ☐ https://www.larashout.com/products-section-part-3
     ☐ https://www.larashout.com/products-section-part-4
 
 
 bug:
     ☐ Setting Facede tidak dapat dijalankan
+    ☐ dalam teks deskripsi menggunakan WYSIWYG tag html terinput d laravel itu harus di hilangkan bisa menjadi senjata untuk d inject
 
 
     https://scotch.io/tutorials/how-to-use-laravel-config-files#toc-when-to-use-config-file

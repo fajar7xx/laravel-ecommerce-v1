@@ -11,7 +11,7 @@
         <div class="row align-items-end">
             <div class="col-lg-8">
                 <div class="page-header-title">
-                    <i class="ik ik-folder bg-info"></i>
+                    <i class="ik ik-shopping-bag bg-info"></i>
                     <div class="d-inline">
                         <h5>{{ $pageTitle }}</h5>
                         <span>{{ $subTitle }}</span>

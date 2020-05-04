@@ -18,7 +18,7 @@
                     <a href="{{ route('admin.dashboard') }}"><i class="ik ik-bar-chart-2"></i><span>Dashboard</span></a>
                 </div>
                 <div class="nav-item {{ Route::currentRouteName() == 'admin.products.index' ? 'active' : '' }}">
-                  <a href="{{ route('admin.products.index') }}"><i class="ik ik-folder"></i><span>Products</span></a>
+                  <a href="{{ route('admin.products.index') }}"><i class="ik ik-shopping-bag"></i><span>Products</span></a>
               </div>
                 <div class="nav-item {{ Route::currentRouteName() == 'admin.categories.index' ? 'active' : '' }}">
                     <a href="{{ route('admin.categories.index') }}"><i class="ik ik-tag"></i><span>Categories</span></a>

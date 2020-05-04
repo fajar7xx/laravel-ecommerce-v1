@@ -9,6 +9,9 @@ use App\Contracts\BrandContract;
 use App\Contracts\CategoryContract;
 use App\Contracts\ProductContract;
 
+// form validasi via formrequest
+use App\Http\Requests\StoreProductFormRequest;
+
 class ProductController extends BaseController
 {
     protected $brandRepository;
@@ -45,7 +48,11 @@ class ProductController extends BaseController
      */
     public function create()
     {
-        //
+        $brands = $this->brandRepository->listBrands('name', 'asc');
+        $categories = $this->categoryRepository->listCategories('name', 'asc');
+
+        $this->setPageTitle('Products', 'Crete Product');
+        return view('admin.products.create', compact('categories', 'brands'));
     }
 
     /**
@@ -54,9 +61,17 @@ class ProductController extends BaseController
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreProductFormRequest $request)
     {
-        //
+        // dd($request->all());
+        $params = $request->except('_token');
+        $product = $this->productRepository->createProduct($params);
+
+        if(!$product){
+            return $this->responseRedirectBack('Error occured while creating product', 'error', true, true);
+        }
+
+        return $this->responRedirect('admin.products.index', 'Product added successfully', 'success', false, false);
     }
 
     /**
@@ -78,7 +93,13 @@ class ProductController extends BaseController
      */
     public function edit($id)
     {
-        //
+        $product = $this->productRepository->findProductById($id);
+        $brands = $this->brandRepository->listBrands('name', 'asc');
+        $categories = $this->categoryRepository->listCategories('name', 'asc');
+
+        $this->setPageTitle('Products', 'Edit Product');
+        return view('admin.products.edit', compact('categories', 'brands', 'product'));
+
     }
 
     /**
@@ -88,9 +109,18 @@ class ProductController extends BaseController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StoreProductFormRequest $request)
     {
-        //
+        // dd($request->all());
+        $params = $request->except('_token');
+
+        $product = $this->productRepository->updateProduct($params);
+
+        if(!$product){
+            return $this->responseRedirectBack('Error occured while updating product', 'error', true, true);
+        }
+
+        return $this->responRedirect('admin.products.index', 'Product updated successfully', 'success', false, false);
     }
 
     /**
