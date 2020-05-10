@@ -8,9 +8,8 @@ class ProductImage extends Model
 {
     protected $table = 'product_images';
 
-    protected $fillanle = [
+    protected $fillable = [
         'product_id',
-        'thumbnail',
         'full'
     ];
 

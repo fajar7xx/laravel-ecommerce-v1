@@ -48,6 +48,7 @@ Vue.use(VueSwal);
 
 //Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('attribute-values', require('./components/AttributeValues.vue').default);
+Vue.component('product-attributes', require('./components/ProductAttributes.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

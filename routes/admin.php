@@ -59,6 +59,22 @@ Route::group(['prefix'  =>  'admin'], function () {
             'as' => 'admin'
         ]);
 
+        Route::post('images/upload', 'Admin\ProductImageController@upload')->name('admin.products.images.upload');
+        Route::delete('images/{id}/delete', 'Admin\ProductImageController@delete')->name('admin.products.images.delete');
+
+        Route::group(['prefix' => 'products'], function(){
+            // load attributes on the page load
+            Route::get('attributes/load', 'Admin\ProductAttributeController@loadAttributes');
+            // load product attributes on the page load
+            Route::post('attributes', 'Admin\ProductAttributeController@productAttributes');
+            // load option values for a attributes
+            Route::post('attributes/values', 'Admin\ProductAttributeController@loadValues');
+            // add product attributes to the current product
+            Route::post('attributes/add', 'Admin\ProductAttributeController@addAttribute');
+            // delete product attribute drom the current product
+            Route::post('attributes/delete', 'Admin\ProductAttributeController@deleteAttribute');
+        });
+
     });
 
 

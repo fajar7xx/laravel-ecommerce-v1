@@ -7,6 +7,7 @@
 @section('css')
   <link rel="stylesheet" href="{{ asset('backend/plugins/select2/dist/css/select2.min.css') }}">
   <link rel="stylesheet" href="{{ asset('backend/plugins/summernote/dist/summernote-bs4.css') }}">
+  <link rel="stylesheet" href="{{ asset('backend/plugins/dropzone/dropzone.min.css') }}">
 @endsection
 
 @section('content')
@@ -54,6 +55,7 @@
         </div>
         <div class="col-9">
             <div class="tab-content">
+                {{-- product edit --}}
                 <div class="tab-pane active" id="general" role="tabpanel" aria-labelledby="general-tab">
                     <div class="card">
                         <div class="card-header">
@@ -164,7 +166,7 @@
 
                               <div class="form-group">
                                 <label for="description">Description</label>
-                                <textarea name="description" id="description" rows="10" class="form-control">{{ old('description', $product->description) }}</textarea>
+                                <textarea name="description" id="description" rows="10" class="form-control">{!! old('description', $product->description) !!}</textarea>
                               </div>
 
                               <div class="form-group">
@@ -190,11 +192,52 @@
                         </div>
                     </div>
                 </div>
+                {{-- image edit --}}
                 <div class="tab-pane" id="images" role="tabpanel" aria-labelledby="images-tab">
-                    bagian 2
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="d-block w-100">Add Images</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <form action="" class="dropzone" id="dropzone" style="border: 2px dashed rgba(0, 0, 0, 0.3)" enctype="multipart/form-data">
+                                        <input type="hidden" name="product_id" value="{{ $product->id }}">
+                                        {{ csrf_field() }}
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="row d-print-none mt-2">
+                                <div class="col-md-12 text-right">
+                                    <button class="btn btn-success" type="button" id="uploadButton">
+                                        Upload Images
+                                    </button>
+                                </div>
+                            </div>
+                            @if ($product->images)
+                                <hr>
+                                <div class="row">
+                                    @foreach ($product->images as $image)
+                                        <div class="col-md-3">
+                                            <div class="card">
+                                                <img src="{{ asset('storage/' . $image->full) }}" id="brandLogo" class="card-img-top" alt="img">
+                                                <div class="card-body">
+                                                    <form action="{{ route('admin.products.images.delete', $image->id) }}" method="POST" enctype="multipart/form-data" class="mt-2">
+                                                        @method('DELETE')
+                                                        @csrf
+                                                        <button type="submit" class="btn btn-danger btn-sm mt-4 float-right"><i class="ik ik-trash"></i> Delete</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                </div>        
+                            @endif
+                        </div>
+                    </div>
                 </div>
                 <div class="tab-pane" id="attributes" role="tabpanel" aria-labelledby="attributes-tab">
-                    bagian 3
+                    <product-attributes :productid="{{ $product->id }}"></product-attributes>
                 </div>
             </div>
         </div>
@@ -204,14 +247,16 @@
 @endsection
 
 @push('scripts')
+    <script type="text/javascript" src="{{ asset('backend/js/app.js') }}"></script>
   <script type="text/javascript" src="{{ asset('backend/plugins/select2/dist/js/select2.min.js') }}"></script>
+  <script src="{{ asset('backend/plugins/summernote/dist/summernote-bs4.min.js') }}"></script>
+  <script src="{{ asset('backend/plugins/dropzone/dropzone.min.js') }}"></script>
+  <script src="{{ asset('backend/plugins/bootstrap-notify/bootstrap-notify.min.js') }}"></script>
   <script>
     $(document).ready(function(){
       $('#categories').select2();
     });
   </script>
-
-  <script src="{{ asset('backend/plugins/summernote/dist/summernote-bs4.min.js') }}"></script>
   <script>
     $(document).ready(function(){
       $('#description').summernote({
@@ -228,5 +273,48 @@
         ]
       });
     });
+  </script>
+  <script>
+      Dropzone.autoDiscover = false;
+
+      $(document).ready(function(){
+
+          let myDropzone = new Dropzone('#dropzone', {
+              paramName: "image",
+              addRemoveLink: false,
+              maxFileSize: 4,
+              parallelUploads: 2,
+              uploadMultiple: false,
+              url: "{{ route('admin.products.images.upload') }}",
+              autoProcessQueue: false,
+          });
+          myDropzone.on("queuecomplete", function(file){
+            window.location.reload();
+            showNotification('Complete', 'All product images uploaded', 'success', 'fa-check');
+          });
+          $('#uploadButton').click(function(){
+              if(myDropzone.files.length === 0){
+                  showNotification('Error', 'please select file to upload', 'danger', 'fa-close');
+              }else{
+                  myDropzone.processQueue();
+              }
+          });
+          function showNotification(title, message, type, icon)
+          {
+              $.notify({
+                  title: title + ' : ',
+                  message: message,
+                  icon: 'fa ' + icon
+              },
+              {
+                  type: type,
+                  allow_dismiss: true,
+                  placement: {
+                      from: "top",
+                      align: "right"
+                  },
+              });
+          }
+      });
   </script>
 @endpush

@@ -9,9 +9,11 @@ class ProductAttribute extends Model
     protected $table = 'product_attributes';
 
     protected $fillable = [
-        'product_id',
+        'attribute_id',
+        'value',
         'quantity',
-        'price'
+        'price',
+        'product_id',
     ];
 
     public function product()
@@ -22,5 +24,10 @@ class ProductAttribute extends Model
     public function attributeValues()
     {
         return $this->belongsToMany(AttributeValue::class);
+    }
+
+    public function attribute()
+    {
+        return $this->belongsTo(Attribute::class);
     }
 }
