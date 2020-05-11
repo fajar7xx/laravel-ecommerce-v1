@@ -14,11 +14,14 @@
 require 'admin.php';
 
 Route::get('/', function () {
-    return view('welcome');
+    // return view('welcome');
+    return view('site.pages.homepage');
 });
 
 // Route::view('/admin', 'admin.dashboard.index');
 
-Auth::routes();
+Auth::routes([
+    'verify' => true,
+]);
 
 // Route::get('/home', 'HomeController@index')->name('home');

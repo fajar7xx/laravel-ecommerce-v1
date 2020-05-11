@@ -63,7 +63,7 @@
                                 </div>
                             </form>
                             <div class="register">
-                                <p>Don't have an account? <a href="register.html">Create an account</a></p>
+                                <p>Back to  <a href="/">FrontPage</a></p>
                             </div>
                         </div>
                     </div>

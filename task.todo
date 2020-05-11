@@ -17,12 +17,18 @@ link tutorial:
     ✔ https://www.larashout.com/products-section-part-2 @done (5/4/2020, 11:04:07 PM)
     ✔ https://www.larashout.com/products-section-part-3 @done (5/7/2020, 11:46:09 PM)
     ✔ https://www.larashout.com/products-section-part-4 @done (5/10/2020, 3:41:08 PM)
+    ✔ https://www.larashout.com/frontend-login-registration @done (5/11/2020, 12:41:09 PM)
+    ☐ https://www.larashout.com/categories-navigation
 
 
 bug:
     ☐ Setting Facede tidak dapat dijalankan
     ☐ dalam teks deskripsi menggunakan WYSIWYG tag html terinput d laravel itu harus di hilangkan bisa menjadi senjata untuk d inject
+    ☐ fitur tombol logout pada ftonrend masih binung penempatannya
 
 
     https://scotch.io/tutorials/how-to-use-laravel-config-files#toc-when-to-use-config-file
     http://themekit.lavalite.org/
+
+next features:
+    ☐ verifikasi email sehingga jika belum verifikasi email user tidak akan bisa masuk dlu 
