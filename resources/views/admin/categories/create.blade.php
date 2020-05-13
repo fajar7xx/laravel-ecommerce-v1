@@ -62,14 +62,14 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="parent">Parent Category <span class="ml-5 text-danger">*</span></label>
-                            <select name="parent" id="parent" class="form-control custom-select mt-15 @error('parent')  is-invalid @enderror">
+                            <label for="parent_id">Parent Category <span class="ml-5 text-danger">*</span></label>
+                            <select name="parent_id" id="parent_id" class="form-control custom-select mt-15 @error('parent_id')  is-invalid @enderror">
                                 <option value="0">Select A parent category</option>
-                                @foreach ($categories as $category)
-                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                @foreach ($categories as $key => $category)
+                                    <option value="{{ $key }}">{{ $category }}</option>
                                 @endforeach
                             </select>
-                            @error('parent')
+                            @error('parent_id')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>

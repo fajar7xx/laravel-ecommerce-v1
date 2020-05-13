@@ -18,13 +18,17 @@ link tutorial:
     ✔ https://www.larashout.com/products-section-part-3 @done (5/7/2020, 11:46:09 PM)
     ✔ https://www.larashout.com/products-section-part-4 @done (5/10/2020, 3:41:08 PM)
     ✔ https://www.larashout.com/frontend-login-registration @done (5/11/2020, 12:41:09 PM)
-    ☐ https://www.larashout.com/categories-navigation
+    ✔ https://www.larashout.com/categories-navigation @done (5/11/2020, 4:29:45 PM)
+    ✔ https://www.larashout.com/laravel-e-commerce-application-development-catalog-listing @done (5/11/2020, 8:35:34 PM)
+    ✘ https://www.larashout.com/laravel-e-commerce-application-development-product-details-page @cancelled (5/13/2020, 3:05:54 PM)
+
 
 
 bug:
     ☐ Setting Facede tidak dapat dijalankan
     ☐ dalam teks deskripsi menggunakan WYSIWYG tag html terinput d laravel itu harus di hilangkan bisa menjadi senjata untuk d inject
     ☐ fitur tombol logout pada ftonrend masih binung penempatannya
+    ☐ kalau atribute nya lebih dari satu dan ketika kita kombinasikan itu masih terdapat bug nilai kembali nol
 
 
     https://scotch.io/tutorials/how-to-use-laravel-config-files#toc-when-to-use-config-file
@@ -32,3 +36,7 @@ bug:
 
 next features:
     ☐ verifikasi email sehingga jika belum verifikasi email user tidak akan bisa masuk dlu 
+
+package yang digunakan : 
+    ☐ https://github.com/TypiCMS/NestableCollection
+    ☐ https://github.com/darryldecode/laravelshoppingcart

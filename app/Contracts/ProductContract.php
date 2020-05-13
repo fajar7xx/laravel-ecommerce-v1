@@ -17,4 +17,6 @@ interface ProductContract
     public function updateProduct(array $params);
 
     public function deleteProduct($id);
+
+    public function findProductBySlug($slug);
 }

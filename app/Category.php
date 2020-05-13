@@ -4,9 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use TypiCMS\NestableTrait;
 
 class Category extends Model
 {
+    use NestableTrait;
+    
     protected $table = 'categories';
 
     protected $fillable = [
