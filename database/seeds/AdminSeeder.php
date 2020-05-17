@@ -3,6 +3,7 @@
 use App\Admin;
 use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;
+use Illuminate\Support\Str;
 
 class AdminSeeder extends Seeder
 {

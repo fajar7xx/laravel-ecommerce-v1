@@ -59,18 +59,19 @@
                     </div>
                     <div class="col-lg-3 text-right col-md-3">
                         <ul class="nav-right">
-                            <li class="heart-icon">
+                            {{-- <li class="heart-icon">
                                 <a href="#">
                                     <i class="icon_heart_alt"></i>
                                     <span>1</span>
                                 </a>
-                            </li>
+                            </li> --}}
                             <li class="cart-icon">
-                                <a href="#">
+                                <a href="{{ route('checkout.cart') }}">
                                     <i class="icon_bag_alt"></i>
-                                    <span>3</span>
+                                    {{-- <span>3</span> --}}
+                                    <span>{{ $cartCount }}</span>
                                 </a>
-                                <div class="cart-hover">
+                                {{-- <div class="cart-hover">
                                     <div class="select-items">
                                         <table>
                                             <tbody>
@@ -110,12 +111,12 @@
                                         <h5>$120.00</h5>
                                     </div>
                                     <div class="select-button">
-                                        <a href="#" class="primary-btn view-card">VIEW CARD</a>
+                                        <a href="{{ route('checkout.cart') }}" class="primary-btn view-card">VIEW CART</a>
                                         <a href="#" class="primary-btn checkout-btn">CHECK OUT</a>
                                     </div>
-                                </div>
+                                </div> --}}
                             </li>
-                            <li class="cart-price">$150.00</li>
+                            <li class="cart-price">RP. {{ \Cart::getSubTotal() }}</li>
                         </ul>
                     </div>
                 </div>
