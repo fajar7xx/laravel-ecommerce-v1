@@ -12,6 +12,7 @@
         "fideloper/proxy": "^4.0",
         "laravel/framework": "^6.2",
         "laravel/tinker": "^2.0",
+        "paypal/rest-api-sdk-php": "^1.14",
         "typicms/nestablecollection": "^1.1"
     },
     "require-dev": {

@@ -22,7 +22,9 @@ link tutorial:
     ✔ https://www.larashout.com/laravel-e-commerce-application-development-catalog-listing @done (5/11/2020, 8:35:34 PM)
     ✘ https://www.larashout.com/laravel-e-commerce-application-development-product-details-page @cancelled (5/13/2020, 3:05:54 PM)
     ✔ https://www.larashout.com/laravel-e-commerce-application-development-shopping-cart @done (5/13/2020, 5:20:17 PM)
-    ☐ https://www.larashout.com/laravel-e-commerce-application-development-checkout
+    ✔ https://www.larashout.com/laravel-e-commerce-application-development-checkout @done (5/18/2020, 5:38:38 AM)
+    ✘ https://www.larashout.com/payment-processing @cancelled (5/19/2020, 5:59:52 PM)
+    ☐ 
 
 
 
@@ -37,8 +39,9 @@ bug:
     http://themekit.lavalite.org/
 
 next features:
-    ☐ verifikasi email sehingga jika belum verifikasi email user tidak akan bisa masuk dlu 
+    ✔ verifikasi email sehingga jika belum verifikasi email user tidak akan bisa masuk dlu @done (5/19/2020, 4:23:04 PM)
 
 package yang digunakan : 
     ☐ https://github.com/TypiCMS/NestableCollection
     ☐ https://github.com/darryldecode/laravelshoppingcart
+    ☐ https://github.com/paypal/PayPal-PHP-SDK
