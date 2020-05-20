@@ -29,6 +29,9 @@
                 <div class="nav-item {{ Route::currentRouteName() == 'admin.attributes.index' ? 'active' : '' }}">
                     <a href="{{ route('admin.brands.index') }}"><i class="ik ik-box"></i><span>Brands</span></a>
                 </div>
+                <div class="nav-item {{ Route::currentRouteName() == 'admin.orders.index' ? 'active' : '' }}">
+                    <a href="{{ route('admin.orders.index') }}"><i class="ik ik-check-square"></i><span>Orders</span></a>
+                </div>
                 <div class="nav-item has-sub">
                     <a href="javascript:void(0)"><i class="ik ik-users"></i><span>Users</span></a>
                     <div class="submenu-content">
