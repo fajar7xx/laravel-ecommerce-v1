@@ -1,10 +1,11 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+<p align="center"><img src="screanshoot/produk.png" width="400"></p>
+<p align="center"><img src="screanshoot/admin-produk.png" width="400"></p>
 
 
 
 ## About Laravel Ecommerce v-1
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+this a laravel ecommerce. most simple using pattern repository for laravel and implementation paypal payment. the feature are:
 
 -catalog page where all products will be displayed to buyers.
 -A product details page where buyers can find more information about the product.
@@ -19,4 +20,5 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 --Manage Shipping methods available to customers.
 --Manage admin users so other staff members use the admin area.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+thank for <a href="https://colorlib.com/wp/template/fashi/">Fashi the ecommerce template</a>
+thanks for <a href="http://themekit.lavalite.org/">Themekit for backend template</a>
